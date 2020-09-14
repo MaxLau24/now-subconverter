@@ -20,7 +20,7 @@ jobs:
     - name: Update sub-web
       run: |
         rm -rf sub-web
-        git clone https://github.com/MaxLau24/sub-web.git
+        git clone https://github.com/zhongfly/sub-web.git
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -50,7 +50,7 @@ jobs:
         sed -i 's/max_concurrent_threads=./max_concurrent_threads=1/g' subconverter/pref.ini
     - uses: autosuite/autocommit@master
       with:
-        commit-message: 'Update sub-web from MaxLau24/sub-web'
+        commit-message: 'Update sub-web from zhongfly/sub-web'
         add-options: -A
     - name: Push changes
       uses: ad-m/github-push-action@master
